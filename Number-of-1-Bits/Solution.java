@@ -1,17 +1,21 @@
-class Solution {
-    public int hammingWeight(int n) {
+import java.util.Scanner;
 
-        int count=0;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an Integer: ");
+        int n = scanner.nextInt();
 
-        while(n != 0){
-           if((n & 1) == 1){
-            count++;
-           }
+        int count = 0;
 
-           n = n >>> 1;
+        while (n != 0) {
+            if ((n & 1) == 1) {
+                count++;
+            }
+
+            n = n >>> 1;
         }
 
-        return count;
-        
+        System.out.println(count);
     }
 }
