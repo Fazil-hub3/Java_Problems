@@ -1,14 +1,26 @@
-class Solution {
-    public List<String> fizzBuzz(int n) {
-        
-        ArrayList<String> result = new ArrayList<>();
-        for(int i=1; i<=n; i++){
-            if(i % 3 == 0 && i % 5 == 0) result.add("FizzBuzz");
-            else if(i % 3 ==0) result.add("Fizz");
-            else if(i % 5 ==0)  result.add("Buzz");
-            else result.add(String.valueOf(i));
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an Integer: ");
+        int n = scanner.nextInt();
+
+        String[] result = new String[n + 1];
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0)
+                result[i] = "FizzBuzz";
+            else if (i % 3 == 0)
+                result[i] = "Fizz";
+            else if (i % 5 == 0)
+                result[i] = "Buzz";
+            else
+                result[i] = String.valueOf(i);
         }
 
-        return result;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(result[i] + ", ");
+        }
     }
 }
