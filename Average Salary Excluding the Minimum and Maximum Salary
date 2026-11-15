@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of salaries: ");
+        int n = sc.nextInt();
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE, sum = 0;
+        System.out.println("Enter salaries:");
+        for (int i = 0; i < n; i++) {
+            int salary = sc.nextInt();
+            sum += salary;
+            if (salary < min) min = salary;
+            if (salary > max) max = salary;
+        }
+        double average = (double)(sum - min - max) / (n - 2);
+        System.out.println("Average salary: " + average);
+    }
+}
