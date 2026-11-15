@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of items: ");
+        int n = sc.nextInt();
+        String[][] items = new String[n][3];
+        System.out.println("Enter type, color and name for each item:");
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < 3; j++) items[i][j] = sc.next();
+
+        System.out.print("Enter rule key (type/color/name): ");
+        String key = sc.next();
+        System.out.print("Enter rule value: ");
+        String value = sc.next();
+        int index = key.equals("type") ? 0 : key.equals("color") ? 1 : 2;
+
+        int count = 0;
+        for (int i = 0; i < n; i++)
+            if (items[i][index].equals(value)) count++;
+        System.out.println("Matching items: " + count);
+    }
+}
