@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter rows and columns: ");
+        int m = sc.nextInt(), n = sc.nextInt();
+        int[][] matrix = new int[m][n];
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < m; i++)
+            for (int j = 0; j < n; j++) matrix[i][j] = sc.nextInt();
+
+        System.out.println("Lucky numbers:");
+        for (int i = 0; i < m; i++) {
+            int minCol = 0;
+            for (int j = 1; j < n; j++)
+                if (matrix[i][j] < matrix[i][minCol]) minCol = j;
+            int value = matrix[i][minCol];
+            boolean largest = true;
+            for (int r = 0; r < m; r++)
+                if (matrix[r][minCol] > value) largest = false;
+            if (largest) System.out.print(value + " ");
+        }
+    }
+}
