@@ -11,7 +11,7 @@ This repository contains simple Java programs for practicing basic programming a
 5. Count the Digits That Divide a Number
 6. Number of Steps to Reduce a Number to Zero
 7. Find Common Factors
-8. Count Digits That Divide a Number
+8. Duplicate of problem 5 in the source document (not stored twice)
 9. Add Binary
 10. Convert Binary Number to Integer
 11. Reverse String
